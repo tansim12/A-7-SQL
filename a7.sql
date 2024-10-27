@@ -1,9 +1,9 @@
 -- Active: 1729688182101@@127.0.0.1@5432@university_db
 DROP Table students
 
-DROP Table students
+DROP Table courses
 
-DROP Table students
+DROP Table enrollment
 
 
 -- Creating the "students" table
@@ -50,11 +50,10 @@ CREATE TABLE enrollment (
 -- Inserting data into the "enrollment" table
 INSERT INTO enrollment (student_id, course_id) VALUES
 (1, 1),
-(2, 2),
-(3, 1),
-(4, 3),
-(5, 4),
-(6, 2);
+(1, 2),
+(2, 1),
+(3, 2);
+
 
 
 SELECT * FROM students
@@ -83,19 +82,17 @@ ORDER BY (backend_mark + frontend_mark) DESC
 LIMIT 1 OFFSET 0)
 
 
---! todo this query 
 -- Query 4:Delete all courses that have no students enrolled.
 
-
-
-
-
-
+DELETE FROM courses
+WHERE course_id not in(
+    SELECT DISTINCT course_id FROM enrollment
+)
 
 
 -- Query 5:Retrieve the names of students using a limit of 2, starting from the 3rd student.
 
-SELECT * FROM students
+SELECT student_name FROM students
 ORDER BY student_id  
 LIMIT 2 OFFSET 2
 
