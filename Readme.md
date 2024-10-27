@@ -10,6 +10,7 @@ This document provides a collection of common PostgreSQL interview questions alo
 ### 1. What is PostgreSQL?
 **Answer:**  
 Postgres is open source sql base, object-relational database management system (ORDMBS), which means that it has relational capabilities and an object-oriented design.It's provide more control database and scalable feature.Postgres support JSON, full-text search, and complex queries.
+
 ---
 
 ### 2. What is the purpose of a database schema in PostgreSQL?
